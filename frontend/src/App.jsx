@@ -73,8 +73,8 @@ const App = () => {
           </section>
 
           {/* Songs Section */}
-          <section className="group min-h-[50vh] lg:min-h-full lg:w-1/2">
-            <div className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10">
+          <section className="group  lg:w-1/2">
+            <div className="min-h-[50vh] lg:min-h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 flex items-center justify-center border border-cyan-500/30">
                   <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
@@ -94,7 +94,7 @@ const App = () => {
         </main>
       </div>
 
-      <PlayerBar currentSong={songs[playing ?? -1]} />
+      <PlayerBar currentSong={songs[playing ?? -1]} isVisible={showPlayer} setIsVisible={setShowPlayer} />
     </div>
   );
 };
