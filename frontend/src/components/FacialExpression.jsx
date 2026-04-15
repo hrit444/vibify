@@ -73,7 +73,7 @@ export default function FacialExpression({
       console.log("Detected mood:", expressionType);
 
       const response = await axios.get(
-        `http://localhost:3000/songs?mood=${expressionType}`,
+        `https://vibify-p0rh.onrender.com/api/songs?mood=${expressionType}`,
       );
 
       setSongs(response.data.song || []);
