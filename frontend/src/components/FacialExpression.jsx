@@ -115,7 +115,7 @@ export default function FacialExpression({
               ref={videoRef}
               autoPlay
               muted
-              className="w-full h-[20vh] lg:h-[39vh] object-cover mirror-video"
+              className="w-full h-[25vh] lg:h-[39vh] object-cover mirror-video"
             />
 
             {/* Overlay indicators */}
@@ -152,22 +152,18 @@ export default function FacialExpression({
         <div className="flex flex-col gap-4">
           <div className="flex w-full justify-between gap-4">
             {/* Stats */}
-            <div className="w-1/2 flex lg:block justify-center bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-xl p-4">
-              <p className="text-xs text-slate-400 text-center mb-1 hidden lg:block">
-                Last detected mood
-              </p>
-              <p className="text-lg font-bold capitalize flex items-center justify-center gap-2 text-center text-purple-300">
+            <div className="w-1/2 min-h-fit flex lg:block justify-center bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-xl px-3 py-4">
+              <p className="text-[3.5vw] xl:text-[1.3vw] font-bold capitalize flex items-center justify-center gap-2 text-center text-purple-300">
                 <span className="text-2xl">
                   {moodEmoji[detectedExpression]}
                 </span>
-                {detectedExpression ? detectedExpression : "No mood detected yet"}
+                {detectedExpression ? detectedExpression : "Unknown mood"}
               </p>
             </div>
 
             {/* detect button */}
 
-            <button
-              className="group w-1/2 relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white rounded-xl px-6 py-4 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-purple-500/50 disabled:hover:shadow-none"
+            <button className="group w-1/2 min-h-fit text-[3.5vw] xl:text-[1.3vw] relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white rounded-xl px-3 py-4 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-purple-500/50 disabled:hover:shadow-none"
               onClick={detectMood}
               disabled={isDetecting || !isModelLoaded}
             >
@@ -175,7 +171,7 @@ export default function FacialExpression({
                 {isDetecting ? (
                   <span>Detecting...</span>
                 ) : (
-                  <span>Detect My Mood</span>
+                  <span>Detect Mood</span>
                 )}
               </span>
             </button>

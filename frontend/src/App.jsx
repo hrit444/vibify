@@ -7,9 +7,10 @@ const App = () => {
   const [songs, setSongs] = useState([]);
   const [playing, setPlaying] = useState(null);
   const [currentMood, setCurrentMood] = useState(null);
+  const [showPlayer, setShowPlayer] = useState(true);
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="h-screen w-screen overflow-x-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Background decorative elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -18,7 +19,7 @@ const App = () => {
 
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="py-[6vw] lg:py-[1vw] h-[10vh] lg:h-[12vh]">
+        <header className="py-[6vw] mb-[4vw] lg:mb-[0vw] lg:py-[1vw] h-[10vh] lg:h-[12vh]">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
@@ -51,9 +52,9 @@ const App = () => {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col lg:flex-row justify-between lg:gap-8 h-[86vh] lg:h-[86vh]">
+        <main className="flex flex-col lg:flex-row justify-between gap-5 lg:gap-8">
           {/* Mood Detection Section */}
-          <section className="group h-[42vh] lg:h-full lg:w-1/2">
+          <section className="group min-h-[42vh] lg:min-h-full lg:w-1/2">
             <div className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-purple-500/30 hover:shadow-purple-500/10">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center border border-purple-500/30">
@@ -72,7 +73,7 @@ const App = () => {
           </section>
 
           {/* Songs Section */}
-          <section className="group h-[42vh] lg:h-full lg:w-1/2">
+          <section className="group min-h-[50vh] lg:min-h-full lg:w-1/2">
             <div className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 flex items-center justify-center border border-cyan-500/30">

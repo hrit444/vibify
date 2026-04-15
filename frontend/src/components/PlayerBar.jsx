@@ -110,18 +110,14 @@ const PlayerBar = ({ currentSong }) => {
 
                 {/* Song Details */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span className="text-xs font-medium text-emerald-400 uppercase tracking-wide">Now Playing</span>
-                  </div>
                   <h3 className="text-base sm:text-lg font-bold text-white truncate mb-1">
-                    {currentSong.title || "Unknown Title"}
+                    {currentSong?.title || "Unknown Title"}
                   </h3>
                   <div className="flex items-center gap-3">
-                    <p className="text-sm text-slate-400 truncate">
-                      {currentSong.artist || "Unknown Artist"}
+                    <p className="text-sm text-slate-400 max-w-[40vw] lg:max-w-none truncate ">
+                      {currentSong?.artist || "Unknown Artist"}
                     </p>
-                    {currentSong.mood && (
+                    {currentSong?.mood && (
                       <>
                         <span className="text-slate-600">•</span>
                         <span className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${gradient} bg-opacity-20 border border-current/20 capitalize font-medium`}>
